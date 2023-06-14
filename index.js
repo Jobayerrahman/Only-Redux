@@ -1,6 +1,4 @@
-const {createStore} = require("redux");
-
-const { combineReducers } =  require("redux");
+const {createStore,combineReducers} = require("redux");
 
 const Increment = "Increment";
 const Decrement = "Decrement";
@@ -62,8 +60,8 @@ const userReducer = (state = initialUserState, action) => {
 }
 
 const rootReducer = combineReducers({
-    counterR : counterReducer,
-    userR    : userReducer
+    counterReducer,
+    userReducer
 })
 
 //Store 
