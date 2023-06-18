@@ -1,4 +1,4 @@
-const {createStore,combineReducers} = require("redux");
+const { createStore, combineReducers } = require("redux");
 
 const Increment = "Increment";
 const Decrement = "Decrement";
@@ -37,35 +37,38 @@ const addUser = (user) =>{
 
 //Reducers
 const counterReducer = (state =initialCounterState, action) =>{
-    if(action.type == Increment){
-        return {
-            ...state,
-            count : state.count + 1
-        }
-    }
-    else if (action.type == Decrement){
-        return {
-            ...state,
-            count : state.count - 1
-        }
+    switch(action.type){
+        case Increment:
+            return {
+                ...state,
+                count : state.count + 1
+            }
+        case Decrement:
+            return {
+                ...state,
+                count : state.count - 1
+            }
+        default:
+            return state;
     }
 }
 
 const userReducer = (state = initialUserState, action) => {
-    if(action.type == Adduser ){
-        return {
-            user : [...state.user, action.payload],
-        }
+    switch(action.type){
+        case Adduser:
+            return {
+                user : [...state.user, action.payload],
+            }
+        default:
+            return state;
     }
 }
 
-const rootReducer = combineReducers({
-    counterReducer,
-    userReducer
-})
+const rootReducer = combineReducers({counterReducer,userReducer})
 
 //Store 
 const store = createStore(rootReducer);
+
 store.subscribe(()=>{
     console.log(store.getState());
 })
@@ -78,4 +81,5 @@ store.dispatch(incrementCount());
 store.dispatch(incrementCount());
 store.dispatch(incrementCount());
 store.dispatch(decrementCount());
+
 store.dispatch(addUser('Ojayer'));
