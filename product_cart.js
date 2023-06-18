@@ -98,4 +98,3 @@ store.dispatch(addProduct("Pencils"));
 
 store.dispatch(getCartItems());
 store.dispatch(addCartItem("Note books"));
-store.dispatch(addCartItem("Condoms"));
