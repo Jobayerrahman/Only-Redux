@@ -9,13 +9,13 @@ const Add_Cart_Item  = "Add_Cart_Item ";
 const Get_Cart_Items = "Get_Cart_Items";
 
 //Product state initialization
-const initailProductState = {
+const initialProductState = {
     products      : [ "Books", "Pen"],
     numofproducts : 2
 }
 
 //Cart state initialization
-const initailCartState = {
+const initialCartState = {
     products      : [ "Books", "Pen"],
     numofproducts : 2
 }
@@ -49,7 +49,7 @@ const getCartItems = () =>{
 }
 
 // Product Reducer 
-const productReducer = (state=initailProductState, action) =>{
+const productReducer = (state=initialProductState, action) =>{
     switch(action.type){
         case Get_Products:
             return{
@@ -66,7 +66,7 @@ const productReducer = (state=initailProductState, action) =>{
 };
 
 // Cart Reducer 
-const cartReducer = (state=initailCartState, action) =>{
+const cartReducer = (state=initialCartState, action) =>{
     switch(action.type){
         case Get_Cart_Items:
             return{
