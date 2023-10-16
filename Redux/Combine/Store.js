@@ -14,4 +14,15 @@ const rootReducer = combineReducers(
 //Store 
 const Store = createStore(rootReducer);
 
-module.exports = Store;
+Store.subscribe(()=>{
+    console.log(Store.getState());
+})
+
+//Dispatch action
+Store.dispatch(incrementCount);
+Store.dispatch(decrementCount);
+Store.dispatch(incrementCount);
+Store.dispatch(incrementCount);
+Store.dispatch(incrementCount);
+Store.dispatch(incrementCount);
+Store.dispatch(decrementCount);
