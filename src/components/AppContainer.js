@@ -2,9 +2,9 @@ import React from "react";
 import Counter from './Counter';
 import Stats from './Stats';
 import { useDispatch, useSelector } from "react-redux";
-import { incrementCounter, decrementCounter } from "../redux/counter/actions";
+import { incrementCounter, decrementCounter } from "../redux/count/action";
 
-export default function CounterApp(){
+export default function AppContainer(){
     const state = useSelector((state)=>state);
     const dispatch =  useDispatch();
 
